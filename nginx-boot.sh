@@ -21,7 +21,7 @@ http {
         server_tokens off;
         
         location /health {
-            return 200 'OK'
+            return 200 'OK';
         }
         
         location / {
