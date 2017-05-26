@@ -19,7 +19,14 @@ http {
     server {
         listen $HTTP_PORT;
         server_tokens off;
-        rewrite ^(.*) $REDIRECT\$1 permanent;
+        
+        location /health {
+            return 'OK'
+        }
+        
+        location / {
+            rewrite ^(.*) $REDIRECT\$1 permanent;
+        }
     }
 }
 
